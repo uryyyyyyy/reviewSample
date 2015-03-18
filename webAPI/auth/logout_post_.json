@@ -1,0 +1,5 @@
+> Parameters:
+< @status 401
+{
+  "message": "Authentication required"
+}

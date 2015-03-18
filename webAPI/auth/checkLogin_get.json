@@ -1,0 +1,11 @@
+{
+	"account":{
+		"id":"admin","name":"アドミン"
+	},
+	"config":{
+		"bts": {
+			"appName": "redmine",
+			"host": "localhost"
+		}
+	}
+}

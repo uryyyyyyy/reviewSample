@@ -1,0 +1,15 @@
+{
+	"settings": {
+		"ecmascript": 6,
+		"jsx": true
+	},
+	"rules": {
+		"no-multi-spaces": false,
+		"no-multi-str": false,
+		"quotes": [1, "single"],
+		"global-strict": false,
+		"no-undef": false,
+		"no-unused-vars": false,
+		"no-underscore-dangle": false
+	},
+}
