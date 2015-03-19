@@ -1,0 +1,22 @@
+{
+	"id":2,
+	"reviewType":{"id":2, "name":"testCase review"},
+	"status":"Conditional",
+	"nextDate":1423666800000,
+	"participantIds":["admin"],
+	"todoList":[1,2],
+	"detailList":[
+		{
+			"id":1,
+			"count":1,
+			"status":"Fail",
+			"date":1423666800000
+		},
+		{
+			"id":2,
+			"count":2,
+			"status":"Conditional",
+			"date":1453666800000
+		}
+	]
+}

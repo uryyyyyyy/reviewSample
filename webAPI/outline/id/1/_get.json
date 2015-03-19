@@ -1,0 +1,22 @@
+{
+	"id":1,
+	"reviewType":{"id":1, "name":"code review"},
+	"status":"Fail",
+	"nextDate":1423666800000,
+	"participantIds":["admin", "admin2", "admin3"],
+	"todoList":[],
+	"detailList":[
+		{
+			"id":1,
+			"count":1,
+			"status":"Fail",
+			"date":1423666800000
+		},
+		{
+			"id":2,
+			"count":2,
+			"status":"Conditional",
+			"date":1453666800000
+		}
+	]
+}

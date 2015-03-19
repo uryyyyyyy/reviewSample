@@ -1,0 +1,20 @@
+[
+	{
+		"id":1,
+		"reviewType":{"id":1, "name":"code review"},
+		"status":"Pass",
+		"nextDate":1423666800000
+	},
+	{
+		"id":2,
+		"reviewType":{"id":2, "name":"testCase review"},
+		"status":"Conditional",
+		"nextDate":1424666800000
+	},
+	{
+		"id":3,
+		"reviewType":{"id":3, "name":"last review"},
+		"status":"Yet",
+		"nextDate":1425666800000
+	}
+]

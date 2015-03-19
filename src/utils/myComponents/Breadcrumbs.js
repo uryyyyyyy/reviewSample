@@ -7,11 +7,7 @@ export default React.createClass({
 	},
 	getInitialState() {
 		return {
-			atsp_import: {name: 'import', url: '#/atspMatter/import'},
-			atsp_list: {name: 'list', url: '#/atspMatter/import'},
-			dev_create: {name: 'create', url: '#/devMatter/create'},
-			dev_edit: {name: 'edit', url: ''},
-			dev_list: {name: 'list', url: '#/devMatter/list'}
+			outline: {name: 'outline', url: '#/outline/find'}
 		};
 	},
 

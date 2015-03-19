@@ -3,9 +3,6 @@ import React  from 'react';
 import Router  from 'react-router';
 import SettingMenu  from './SettingMenu';
 import LoginLogoutForm  from './LoginLogoutForm';
-import OutlineMenu  from './OutlineMenu';
-import DetailMenu  from './DetailMenu';
-import SearchMenu  from './SearchMenu';
 
 import Global  from '../utils/Global';
 
@@ -23,9 +20,8 @@ export default React.createClass({
 					<a className="navbar-brand"
 						href="#">Review-Management</a>
 					<ul className="nav navbar-nav">
-						<OutlineMenu />
-						<DetailMenu />
-						<SearchMenu />
+						<li><a href="#/outline/finder">outline</a></li>
+						<li><a href="#/report/">Report</a></li>
 						<SettingMenu />
 					</ul>
 					<LoginLogoutForm className="navbar-form navbar-right" />

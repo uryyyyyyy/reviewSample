@@ -7,6 +7,7 @@ import NotFoundPage  from './rootTemplate/NotFoundPage';
 import AppTemplate  from './rootTemplate/AppTemplate';
 
 import OutlineRoot  from './outline/Root';
+import OutlineFinder  from './outline/Finder';
 
 import DetailRoot  from './detail/Root';
 
@@ -15,13 +16,13 @@ import Global  from './utils/Global';
 var routes = (
 	<Router.Route path='/' handler={AppTemplate}>
 
-		<Router.Route path='ticketId/:ticketId' handler={OutlineRoot}>
-			<Router.Route path='outlineId:outlineId' handler={OutlineRoot} />
-		</Router.Route>
+		<Router.Route path='outline/finder' handler={OutlineFinder} />
+		<Router.Route path='outline/:ticketId/' handler={OutlineRoot} />
+		<Router.Route path='outline/:ticketId/:outlineId' handler={OutlineRoot} />
 
 		<Router.Route path='detail/:detailId' handler={DetailRoot} />
 
-		<Router.NotFoundRoute handler={NotFoundPage}/>
+		<Router.NotFoundRoute handler={NotFoundPage} />
 	</Router.Route>
 );
 

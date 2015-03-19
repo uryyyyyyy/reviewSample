@@ -1,17 +1,14 @@
 'use strict';
 import React  from 'react';
 
-import AsyncUtil  from '../../utils/functions/AsyncUtil';
-import Logger  from '../../utils/functions/Logger';
-import Global  from '../../utils/Global';
-import Escape  from '../../utils/functions/Escape';
-
-var buttonTag = `<button><span class="glyphicon glyphicon-remove"></span></button>`
+import AsyncUtil  from '../utils/functions/AsyncUtil';
+import Logger  from '../utils/functions/Logger';
+import Global  from '../utils/Global';
+import Escape  from '../utils/functions/Escape';
 
 export default React.createClass({
 	propTypes: {
-		ticketIds: React.PropTypes.array,
-		onClickRow: React.PropTypes.func
+		ticketIds: React.PropTypes.array
 	},
 	getInitialState() {
 		return {
@@ -21,7 +18,6 @@ export default React.createClass({
 	},
 	componentDidMount(e){
 		var $selector = $(this.getDOMNode()).bootstrapTable({data: []});
-		$selector.on('click-row.bs.table', this.selectTicket);
 		this.setState({$selector: $selector});
 		this.fetchData(this.props.ticketIds);
 	},
@@ -35,11 +31,6 @@ export default React.createClass({
 			.then((v => this.setState({ticketOutlines: v})).bind(this));
 	},
 
-	selectTicket(e, row, $element) {
-		if($element.context.innerHTML !== buttonTag){return;}
-		var selectedTicket = this.state.ticketOutlines.filter(v => v.id === row.id)[0];
-		this.props.onClickRow(selectedTicket);
-	},
 	convertToTableHtml(values, bts){
 		return values.map( v => {
 			var btsUrl;
@@ -48,7 +39,6 @@ export default React.createClass({
 			}
 			return {
 				//check XSS. number => Number(var), String => Escape.escapeHTML(var)
-				button: buttonTag,
 				id: Number(v.id),
 				title: `<a class="navbar-form" href="${btsUrl}" target="_blank">${Escape.escapeHTML(v.title)}</a>`,
 				progress: Escape.escapeHTML(v.progress)
@@ -63,10 +53,9 @@ export default React.createClass({
 		}
 		return (
 			<table className="table" data-toggle="table" data-height="200"
-				data-pagination="true" data-page-list="[100]">
+				data-pagination="false">
 				<thead>
 					<tr>
-						<th data-field="button"></th>
 						<th data-field="id" data-sortable="true">ID</th>
 						<th data-field="title" data-sortable="true">Title</th>
 						<th data-field="progress" data-sortable="true">Progress</th>
